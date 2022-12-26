@@ -17,11 +17,11 @@ for m in get_monitors():
 
 print(f"Screen width is {screen_width}")
 
-# -------------------- Load background image --------------------
-
+# Read JSY video file list, sort by name.
 jsy_video_files = [f for f in os.listdir(cfg.JSY_VIDOE_PATH) if f.endswith('.mp4')]
 jsy_video_files.sort()
 
+# -------------------- Load background image --------------------
 
 bg_image = cv2.imread("bg2.jpg")
 cv2.namedWindow("bg_image", cv2.WINDOW_NORMAL)
@@ -155,12 +155,12 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
             if noseVisibility > 50:
                 if leftWristVisibility > 50 and rightWristVisibility > 50: # hands can be seen
                     if leftHipVisibility > 50 and rightHipVisibility > 50:
-                        if palm_distance_percent > 40: # standing, palm not folded
+                        if palm_distance_percent > 50: # standing, palm not folded
                             if seq =="":
                                 seq = "S"
                             elif seq == "SP": # has put down the palm
                                 seq = "S"
-                        if palm_distance_percent < 40: # standing, palm folded
+                        if palm_distance_percent < 50: # standing, palm folded
                             if seq =="S":
                                 seq += "P"
                         if noseY > leftShoulderY: # bow down
@@ -174,7 +174,7 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
                 seq = ""
 
             if seq == "SPB":
-                time.sleep(0.5)
+                time.sleep(1)
 
                 play_jsy_vidoe_randomly()
 
