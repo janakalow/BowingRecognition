@@ -10,10 +10,10 @@ VLC_EXE = "C:/Program Files/VideoLAN/VLC/vlc.exe"
 
 # specify the folder in which JSY video files are located. Video files must be .mp4 files.
 # Note that forward slash (/) must be used instead of backslash (\)
-JSY_VIDOE_PATH = "C:/Users/chee-kong.low/PycharmProjects/Bowing/jsy_videos"
+JSY_VIDEO_PATH = "C:/Users/chee-kong.low/PycharmProjects/Bowing/jsy_videos"
 
 # Set to True for production mode to show minimum information. Se to False to show detailed information.
-IS_PRODUCTION = False
+IS_PRODUCTION = True
 
 # Camera resolutions
 CAM_WIDTH = 640

@@ -18,7 +18,7 @@ for m in get_monitors():
 print(f"Screen width is {screen_width}")
 
 # Read JSY video file list, sort by name.
-jsy_video_files = [f for f in os.listdir(cfg.JSY_VIDOE_PATH) if f.endswith('.mp4')]
+jsy_video_files = [f for f in os.listdir(cfg.JSY_VIDEO_PATH) if f.endswith('.mp4')]
 jsy_video_files.sort()
 
 # -------------------- Load background image --------------------
@@ -42,7 +42,7 @@ def play_jsy_vidoe_randomly():
     # Play one of the JSY videos randomly
     filenum = random.randint(0, len(jsy_video_files) - 1)
     # videofile = f"jsy{filenum}.mp4"
-    videofile = cfg.JSY_VIDOE_PATH.replace('/', '\\') + '\\' + jsy_video_files[filenum]
+    videofile = cfg.JSY_VIDEO_PATH.replace('/', '\\') + '\\' + jsy_video_files[filenum]
     comm = [cfg.VLC_EXE, videofile, '--fullscreen']
     subprocess.run(comm, shell=True)
 
