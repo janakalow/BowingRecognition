@@ -128,12 +128,12 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
                 palm_distance = math.sqrt((rightWristX - leftWristX)**2 + (rightWristY - leftWristY)**2)
                 palm_distance_percent = int(palm_distance / shoulder_width * 100)
 
-                if palm_distance_percent < 40:
+                if palm_distance_percent < 50:
                     if seq == "S":
                         seq += "P"
 
                 if not cfg.IS_PRODUCTION:
-                    cv2.putText(image, f"Shoulder width: {shoulder_width},Palm distance: {int(palm_distance)}", (10, 40), FONT, 0.5, WHITE, 1, cv2.LINE_AA)
+                    cv2.putText(image, f"Shoulder width: {shoulder_width}, Palm distance: {int(palm_distance)}", (10, 40), FONT, 0.5, WHITE, 1, cv2.LINE_AA)
                     cv2.putText(image, f"Palm distance: {palm_distance_percent}% of shoulder width.", (10, 60), FONT, 0.5, WHITE, 1, cv2.LINE_AA)
 
             # recognize and show hip position
