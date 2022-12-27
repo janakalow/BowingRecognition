@@ -1,5 +1,5 @@
 # BowingRecognition
-Project started by Sg Nibong Bro Siow. Main code written by Ang Wei Loon. Touch up for usability by Janaka Low.
+Project started by Sg Nibong Bro Siow. Main code written by Ang Wai Loon. Touch up for usability by Janaka Low.
 
 # Dependency
 This application will call VLC to play video files. This application is test to work fine with VLC version 3.0.16.
