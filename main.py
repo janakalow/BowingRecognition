@@ -18,12 +18,14 @@ for m in get_monitors():
 print(f"Screen width is {screen_width}")
 
 # Read JSY video file list, sort by name.
-jsy_video_files = [f for f in os.listdir(cfg.JSY_VIDEO_PATH) if f.endswith('.mp4')]
+jsy_video_files = [f for f in os.listdir(cfg.JSY_VIDEO_PATH) if f.endswith('.wmv')]
 jsy_video_files.sort()
 
 # -------------------- Load background image --------------------
 
-bg_image = cv2.imread("bg2.jpg")
+# bg_image = cv2.imread("bg2.jpg")
+bg_image_file = cfg.JSY_IMAGE_PATH.replace('/', '\\') + '\\' + "jsycover.bmp"
+bg_image = cv2.imread(bg_image_file)
 cv2.namedWindow("bg_image", cv2.WINDOW_NORMAL)
 cv2.setWindowProperty("bg_image", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 cv2.imshow("bg_image", bg_image)
