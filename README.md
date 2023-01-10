@@ -4,6 +4,11 @@ Project started by Sg Nibong Bro Siow. Main code written by Ang Wai Loon. Touch 
 # Dependency
 This application will call VLC to play video files. This application is test to work fine with VLC version 3.0.16.
 
+Requires 3 packages for development:
+1. opencv-contrib-python
+2. mediapipe
+3. screeninfo
+
 # VLC setting.
 ## Auto exit after video playing is finished
 - Open VLS, go to Tools .. Preferences. At the bottom left corner, set Show Setting to "All".
